@@ -7,10 +7,14 @@ const App = () => {
   const courseGoals = [{id:'cg1',text:'Finish the Course'},{id:'cg2',text:'Learn all about the Course.'},{id:'cg3',text:'Help other students in the Course.'}
 ];
 
+  const addNewGoalHandler = (newGoal) => {
+    courseGoals.push(newGoal);
+  };
+
   return( 
     <div className='course-goals'>
       <h2>Course Goals</h2>
-      <NewGoal/>
+      <NewGoal onAddGoal={addNewGoalHandler}/>
       <GoalList goals={courseGoals}/>
     </div>
   );
